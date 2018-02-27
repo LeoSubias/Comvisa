@@ -5,17 +5,17 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Rubrique
+ * MentionLegale
  *
- * @ORM\Table(name="rub_rubrique")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\RubriqueRepository")
+ * @ORM\Table(name="mention_legale")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MentionLegaleRepository")
  */
-class Rubrique
+class MentionLegale
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="rub_oid", type="integer")
+     * @ORM\Column(name="men_oid", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -24,18 +24,11 @@ class Rubrique
     /**
      * @var string
      *
-     * @ORM\Column(name="rub_nom", type="string", length=255)
-     */
-    private $nom;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="rub_texte", type="string", length=10000)
+     * @ORM\Column(name="men_texte", type="string", length=1000)
      */
     private $texte;
 
-     /**
+    /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="usr_oid", referencedColumnName="usr_oid")
      */
@@ -43,11 +36,12 @@ class Rubrique
 
     public function __toString()
     {    
-        return $this->getNom()." ".$this->getTexte();
+        return $this->getTexte();
     }
 
+
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -57,35 +51,11 @@ class Rubrique
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Rubrique
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set texte
+     * Set texte.
      *
      * @param string $texte
      *
-     * @return Rubrique
+     * @return MentionLegale
      */
     public function setTexte($texte)
     {
@@ -95,7 +65,7 @@ class Rubrique
     }
 
     /**
-     * Get texte
+     * Get texte.
      *
      * @return string
      */
@@ -109,7 +79,7 @@ class Rubrique
      *
      * @param \AppBundle\Entity\User|null $user
      *
-     * @return Rubrique
+     * @return MentionLegale
      */
     public function setUser(\AppBundle\Entity\User $user = null)
     {

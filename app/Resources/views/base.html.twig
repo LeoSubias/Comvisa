@@ -2,12 +2,41 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Comvisa{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
     </head>
     <body>
+    <a href="#offcanvas-slide" class="uk-button uk-button-muted" uk-toggle>Open</a>
+      <div id="offcanvas-slide" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+          <ul class="uk-nav uk-nav-default">
+            <li><a href="/">Home</a></li>
+            <li class="uk-nav-divider"></li>
+            {% for rubrique in rubriques %}
+                <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
+                
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <script type="text/javascript" src="{{ asset('node_modules/jquery/dist/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit.js') }}"></script>
     </body>
 </html>
+
+{# <div id="offcanvas-slide" uk-offcanvas="" class="uk-offcanvas uk-open" style="display: block;">
+        <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+          <ul class="uk-nav uk-nav-default">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li><a href="#">Item</a></li>
+            <li class="uk-nav-header">Header</li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </div>
+      </div> #}

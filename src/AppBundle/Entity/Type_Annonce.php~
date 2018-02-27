@@ -68,3 +68,4 @@ class Type_Annonce
         return $this->nom;
     }
 }
+

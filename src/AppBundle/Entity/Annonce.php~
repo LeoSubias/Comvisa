@@ -173,52 +173,5 @@ class Annonce
     {
         return $this->texte;
     }
-
-    /**
-     * Set typeAnnonce.
-     *
-     * @param \AppBundle\Entity\Type_Annonce|null $typeAnnonce
-     *
-     * @return Annonce
-     */
-    public function setTypeAnnonce(\AppBundle\Entity\Type_Annonce $typeAnnonce = null)
-    {
-        $this->type_annonce = $typeAnnonce;
-
-        return $this;
-    }
-
-    /**
-     * Get typeAnnonce.
-     *
-     * @return \AppBundle\Entity\Type_Annonce|null
-     */
-    public function getTypeAnnonce()
-    {
-        return $this->type_annonce;
-    }
-
-    /**
-     * Set user.
-     *
-     * @param \AppBundle\Entity\User|null $user
-     *
-     * @return Annonce
-     */
-    public function setUser(\AppBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user.
-     *
-     * @return \AppBundle\Entity\User|null
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
 }
+

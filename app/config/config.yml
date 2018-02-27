@@ -76,9 +76,86 @@ fos_user:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
 
+ivory_ck_editor:
+    toolbars:
+       configs:
+           tool_rubrique: [ "@texte",  "@puce" , "@other", "@web" ]
+       items:
+           texte: [ 'Bold', 'Italic', 'Underline' ,'TextColor', 'FontSize' ]
+           puce:     [ 'NumberedList', 'BulletedList']
+           other:     ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+           web: ['Image','Link', 'Unlink','Source']
+
+vich_uploader: 
+    db_driver: orm 
+    mappings: 
+        photo: 
+            uri_prefix: /uploads/Photo
+            upload_destination: '%kernel.root_dir%/../web/uploads/Photo' 
+            namer: vich_uploader.namer_uniqid
+
 easy_admin:
+    design:
+        brand_color: 'orange'
+        form_theme: 'vertical'
+    list: 
+        actions:
+            - { name: 'edit' , icon: 'pencil', label: '' }
+            - { name: 'delete', icon: 'times' , label: '' }
+            - { name: 'new' , label: 'Créer'}
     entities:
-        - AppBundle\Entity\Type_Annonce
-        - AppBundle\Entity\Annonce
-        - AppBundle\Entity\User
-        - AppBundle\Entity\Rubrique
+        Rubrique: 
+            label: 'Rubrique'
+            class: AppBundle\Entity\Rubrique
+            form:
+                title: 'Créer/Modifier une rubrique'
+                fields:
+                    - { property: 'Nom' , label: 'Nom de la rubrique' }
+                    - { property: 'texte' , type: 'ckeditor' }
+        User:
+            class: AppBundle\Entity\User
+            list:
+                fields:
+                    - { property: 'username', label: "Nom de l'utilisateur"}
+                    - email
+                    - { property: 'enabled', label: "Compte activé"}
+                    - { property: 'lastLogin', label: 'Date de dernière connexion'}
+            form:
+                title: 'Créer/Modifier un utilisateur'
+                fields:
+                    - { type: 'group', css_class: 'col-sm-5' }
+                    - { property: 'username', label: "Nom de l'utilisateur"}
+                    - email
+                    - { property: 'plainPassword', label: 'Mot de passe', type: 'password', type_options: { required: true }}
+        Type_Annonce:
+            class: AppBundle\Entity\Type_Annonce
+            label: 'Type Annonce'
+        Annonce:
+            class: AppBundle\Entity\Annonce
+            form:
+                fields:
+                    - titre
+                    - { property: 'photoFile', type: 'vich_image' }
+                    - texte
+                    - type_annonce
+                    - user
+            list:
+                fields:
+                    - titre
+                    - type_annonce
+                    - { property: 'photo', type: 'image', base_path: '/uploads/Photo' }                
+
+        Type_Annonce:
+            class: AppBundle\Entity\Type_Annonce
+            form: 
+                title: "Créer un type d'annonce"
+                fields:
+                    - Type Annonce            
+        MentionLegale:
+            class: AppBundle\Entity\MentionLegale
+            form:
+                title: "Mention Legale"
+                fields:
+                    - { property: 'texte' , type: 'ckeditor', type_options: { required: True } }
+
+        
