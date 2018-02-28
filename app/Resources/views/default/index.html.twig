@@ -3,7 +3,7 @@
 	{% for rubrique in rubriques %}
 			<h3>{{ rubrique.nom }}</h3>			
 	            <tr>
-	                <th>Annonce N°</th>
+	                <th>Rubrique N°</th>
 	                <td>{{ rubrique.id }}</td><br>
 	            </tr>
 	            <tr>
@@ -12,4 +12,24 @@
 	            </tr>
 		</div>
 	{% endfor %}
+	{% for annonce in annonces %}
+	<h3>{{ annonce.titre }}</h3>
+		<tr>
+			<th>Annonce N°</th>
+			<th>{{ annonce.id }}</th>
+		</tr>
+		<tr>
+			<th>Titre : </th>
+			<th>{{ annonce.titre }}</th>
+		</tr>
+		<tr>
+			<th>texte :</th>
+			<th>{{ annonce.texte|raw }}</th>
+		</tr>
+		<tr>
+			<th>type d'annonce :</th>
+			<th>{{ annonce.type_annonce }}</th>
+		</tr>
+	{% endfor %}
+
 {% endblock %}

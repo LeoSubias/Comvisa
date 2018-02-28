@@ -8,9 +8,10 @@ use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Annonce
- *
+ * 
  * @ORM\Table(name="ann_annonce")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AnnonceRepository")
+ * @Vich\Uploadable
  */
 class Annonce
 {

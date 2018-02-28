@@ -55,5 +55,29 @@ class DefaultController extends Controller
         ));
         
     }
+
+    /**
+     * Finds and displays a rubrique entity.
+     *
+     * @Route("annonce/{id}", name="annonce_show")
+     * @Method("GET")
+     */
+
+    public function annonceAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $annonce = $this->getDoctrine()
+            ->getRepository(Annonce::class)->find($id);
+        $annonces = $this->getDoctrine()->getRepository(Annonce::class)->findAll();
+
+
+        return $this->render('default/annonce.html.twig', array(
+            'annonce' => $annonce,
+            'annonces' => $annonces,
+            
+            
+        ));
+        
+    }
 }
 

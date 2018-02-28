@@ -143,7 +143,7 @@ easy_admin:
                 fields:
                     - titre
                     - type_annonce
-                    - { property: 'photo', type: 'image', base_path: '/uploads/Photo' }                
+                    - { property: 'photo', type: 'image', base_path: '/uploads/Photo' ,  type_options: { required: True } }                
 
         Type_Annonce:
             class: AppBundle\Entity\Type_Annonce
