@@ -34,12 +34,12 @@ class Annonce
     /**
      * @var string
      *
-     * @ORM\Column(name="ann_photo", type="string", length=255)
+     * @ORM\Column(name="ann_photo", type="string", length=255, nullable = true)
      */
     private $photo;
 
     /**
-    * @Vich\UploadableField(mapping="photo", fileNameProperty="photo")
+    * @Vich\UploadableField(mapping="photo", fileNameProperty="photo" )
     * 
     * @var File
     */
@@ -48,7 +48,7 @@ class Annonce
     /**
      * @var string
      *
-     * @ORM\Column(name="ann_texte", type="string", length=255)
+     * @ORM\Column(name="ann_texte", type="string", length=10000)
      */
     private $texte;
 

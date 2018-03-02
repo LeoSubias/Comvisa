@@ -63,7 +63,7 @@ class DefaultController extends Controller
      * @Method("GET")
      */
 
-    public function annonceAction(Request $request, $id)
+    public function annonceIdAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $annonce = $this->getDoctrine()
@@ -78,6 +78,29 @@ class DefaultController extends Controller
             
         ));
         
+    }
+
+    /**
+     * Finds and displays a rubrique entity.
+     *
+     * @Route("/annonce", name="annonce_show")
+     * @Method("GET")
+     */
+
+    public function annonceAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $annonces = $em->getRepository('AppBundle:Annonce')->findAll();
+        $type_Annonces = $em->getRepository('AppBundle:Type_Annonce')->findAll();
+        $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
+        $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
+        
+        return $this->render('default/annonce.html.twig', array(
+                'annonces' => $annonces,
+                'type_Annonces' => $type_Annonces,
+                'mentionlegales' => $mentionlegales,
+                'rubriques' => $rubriques,
+        ));
     }
 }
 

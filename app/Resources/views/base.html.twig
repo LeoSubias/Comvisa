@@ -6,9 +6,13 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
-    <body>
-    <a href="#offcanvas-slide" class="uk-button uk-button-muted" uk-toggle>Open</a>
+    <body>        
+        {% block nav %}
+  <nav class="uk-navbar uk-navbar-container uk-margin navbartop">
+    <div class="uk-navbar-center">
+      <a href="#offcanvas-slide" class="uk-button uk-button-muted test2" uk-toggle><span uk-navbar-toggle-icon class="test2"></span></a>
       <div id="offcanvas-slide" uk-offcanvas>
         <div class="uk-offcanvas-bar">
           <ul class="uk-nav uk-nav-default">
@@ -16,27 +20,47 @@
             <li class="uk-nav-divider"></li>
             {% for rubrique in rubriques %}
                 <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
-                
             {% endfor %}
+            <li class="uk-nav-divider"></li>
+            <li><a href="/annonce" title="Annonce">Annonce</a></li>
           </ul>
         </div>
       </div>
+            
+    </div>
+</nav>        
+            
+        {% endblock %}
+        <div class="uk-align-center">
         {% block body %}{% endblock %}
+        </div>
         <script type="text/javascript" src="{{ asset('node_modules/jquery/dist/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit-icons.js') }}"></script>
     </body>
 </html>
 
 {# <div id="offcanvas-slide" uk-offcanvas="" class="uk-offcanvas uk-open" style="display: block;">
         <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
           <ul class="uk-nav uk-nav-default">
-            <li class="uk-active"><a href="#">Active</a></li>
-            <li><a href="#">Item</a></li>
-            <li class="uk-nav-header">Header</li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
+            <li><a href="/">Home</a></li>
             <li class="uk-nav-divider"></li>
-            <li><a href="#">Item</a></li>
+            {% for rubrique in rubriques %}
+                <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div> #}
+
+       {# <a href="#offcanvas-slide" class="uk-button uk-button-muted" uk-toggle>Open</a>
+      <div id="offcanvas-slide" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+          <ul class="uk-nav uk-nav-default">
+            <li><a href="/">Home</a></li>
+            <li class="uk-nav-divider"></li>
+            {% for rubrique in rubriques %}
+                <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div> #}

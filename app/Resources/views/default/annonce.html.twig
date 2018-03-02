@@ -1,1 +1,83 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="uk-child-width-auto" uk-grid>
+{% for annonce in annonces %}
+        <div class="uk-card uk-card-default try  ">
+            <div class="uk-card-media-top uk-box-shadow-medium">
+            	<div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
+	                {% if annonce.photo != null %}
+	            			<img class="img uk-align-center" src="/uploads/Photo/{{ annonce.photo }}" alt="{{ annonce.titre }}" >
+	        		{% endif %}
+            	</div>
+            	<div class="uk-card-body uk-text-center ">
+            		<h3 class="uk-card-title">{{ annonce.titre|raw }}</h3>
+            			<div class="uk-card-default">	
+            				<span>Type Annonce : </span>{{ annonce.type_annonce|raw }}
+            			</div>
+            			{% if annonce.texte|length > 255 %}
+            				<div class="uk-card-default">
+            					<p>{{ annonce.texte[:110]|raw }} ... </p>
+            				</div>
+        				{% else %}
+        					<div class="uk-card-default">
+        						<p>{{ annonce.texte|raw }}</p>
+        					</div>
+        				{% endif %}
+					<a class="uk-button uk-button-default" href="#modal-full" uk-toggle>Plus d'info</a>
+					<div id="modal-full" class="uk-modal-full" uk-modal>
+					    <div class="uk-modal-dialog">
+					        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+					        <div class="uk-grid-collapse uk-child-width-1-2@m uk-flex-middle" uk-grid>
+					            <div class="uk-background-cover">
+					            	<img class="uk-background-cover" src="/uploads/Photo/{{ annonce.photo }}" uk-height-viewport>
+					            </div>
+					            <div class="uk-padding-large">
+					                <h3 class="uk-card-title">{{ annonce.titre|raw }}</h3>
+											<div class="uk-card-default">
+												{{ annonce.texte|raw }}
+											</div>
+						    			<div class="uk-card-default">	
+						    				<span>Type Annonce : </span>{{ annonce.type_annonce|raw }}
+						    			</div>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+            	</div>		
+        	</div>
+    </div>
+            				
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+
+{# 
+
+<div id="modal-full" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+        <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+            <div class="uk-background-cover" style="background-image: url('img/princess.jpg');" uk-height-viewport></div>
+            <div class="uk-padding-large">
+                <h1>Headline</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+</div> #}
+
+{# <div class="uk-text-center">
+        <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
+            <img src="../docs/images/dark.jpg" alt="">
+            <div class="uk-position-center">
+                <div class="uk-transition-slide-top-small"><h4 class="uk-margin-remove">Headline</h4></div>
+                <div class="uk-transition-slide-bottom-small"><h4 class="uk-margin-remove">Subheadline</h4></div>
+            </div>
+        </div>
+        <p class="uk-margin-small-top">Small Top + Bottom</p>
+    </div> #}

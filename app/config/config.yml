@@ -112,6 +112,12 @@ easy_admin:
                 fields:
                     - { property: 'Nom' , label: 'Nom de la rubrique' }
                     - { property: 'texte' , type: 'ckeditor' }
+                    - { property: 'photoFile', type: 'vich_image' }
+            list:
+                fields:
+                    - Nom
+                    - texte
+                    - { property: 'photo', type: 'image', base_path: '/uploads/Photo' ,  type_options: { required: True } }
         User:
             class: AppBundle\Entity\User
             list:
@@ -136,7 +142,7 @@ easy_admin:
                 fields:
                     - titre
                     - { property: 'photoFile', type: 'vich_image' }
-                    - texte
+                    - { property: 'texte' , type: 'ckeditor' }
                     - type_annonce
                     - user
             list:

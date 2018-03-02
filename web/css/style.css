@@ -1,0 +1,48 @@
+.navbartop{
+	list-style: none;
+	border:1px solid black;
+	border-radius: 0px 0px 5px 5px;
+	background:black !important;
+	opacity: 0.7;
+	box-shadow: 0px 0px 3px 3px;
+
+}
+
+.test2:hover{
+	color:orange;
+
+}
+
+.img{
+	height: 100%;
+	width: 100%;
+}
+
+/*[class*="uk-"]{
+	border:2px solid black;
+}*/
+.test{
+	background-image: url("image/place-comedie-montpellier.jpg")
+}
+.test3{
+	float: left;
+	overflow: auto;
+}
+
+.img-rub{
+	margin-top: -5em;
+	padding-left: 2.5em;
+	width: 98%;
+	height: 50em;
+}
+.img{
+	width: 55em;
+	height: 35em;
+}
+
+.try{
+	margin-left: 1em;
+}
+.text-ann{
+	color:white;
+}

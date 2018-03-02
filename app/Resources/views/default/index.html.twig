@@ -1,35 +1,36 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	{% for rubrique in rubriques %}
-			<h3>{{ rubrique.nom }}</h3>			
-	            <tr>
-	                <th>Rubrique N°</th>
-	                <td>{{ rubrique.id }}</td><br>
-	            </tr>
-	            <tr>
-	                <th>Titre : </th>
-	                <td>{{ rubrique.texte|raw }}</td><br>
-	            </tr>
-		</div>
-	{% endfor %}
-	{% for annonce in annonces %}
-	<h3>{{ annonce.titre }}</h3>
-		<tr>
-			<th>Annonce N°</th>
-			<th>{{ annonce.id }}</th>
-		</tr>
-		<tr>
-			<th>Titre : </th>
-			<th>{{ annonce.titre }}</th>
-		</tr>
-		<tr>
-			<th>texte :</th>
-			<th>{{ annonce.texte|raw }}</th>
-		</tr>
-		<tr>
-			<th>type d'annonce :</th>
-			<th>{{ annonce.type_annonce }}</th>
-		</tr>
-	{% endfor %}
+
+<div class="">
+
+    
+        <div class="uk-container">
+<img src="{{ asset('image/place-comedie-montpellier.jpg') }}">
+            <h3>Section with Images</h3>
+
+            <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+	
+{# <div class="test">	
+	<img class="img uk-align-center" src="{{ asset('image/place-comedie-montpellier.jpg') }}"  uk-cover>
+</div> #}
+
+
+
+	{#  #}
 
 {% endblock %}
