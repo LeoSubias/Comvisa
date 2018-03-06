@@ -1,21 +1,27 @@
-.navbartop{
-	list-style: none;
-	border:1px solid black;
-	border-radius: 0px 0px 5px 5px;
-	background:black !important;
-	opacity: 0.7;
-	box-shadow: 0px 0px 3px 3px;
+.ha{
+	background: white;
+	opacity: 0.6;
+}
 
+.color1{
+	background-color: #FF8849;
+	width: auto;
+	height: 5em;
 }
 
 .test2:hover{
-	color:orange;
-
+	color:#FF8849;
 }
 
-.img{
-	height: 100%;
-	width: 100%;
+#map {
+    height: 100%;
+  }
+
+.navbar-base{ 
+	z-index: 980;
+}
+#logo {
+    position: fixed;
 }
 
 /*[class*="uk-"]{
@@ -41,7 +47,7 @@
 }
 
 .try{
-	margin-left: 1em;
+	margin-left: 0em;
 }
 .text-ann{
 	color:white;
