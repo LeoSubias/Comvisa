@@ -10,6 +10,8 @@ use AppBundle\Entity\MentionLegale;
 use AppBundle\Entity\Type_Annonce;
 use AppBundle\Entity\Rubrique;
 use AppBundle\Entity\Annonce;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Map;
 
 class DefaultController extends Controller
 {
@@ -28,8 +30,8 @@ class DefaultController extends Controller
                 'annonces' => $annonces,
                 'type_Annonces' => $type_Annonces,
                 'mentionlegales' => $mentionlegales,
-                'rubriques' => $rubriques,
-        ));
+                'rubriques' => $rubriques,  
+            ));
     }
 
     /**

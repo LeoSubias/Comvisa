@@ -163,5 +163,3 @@ easy_admin:
                 title: "Mention Legale"
                 fields:
                     - { property: 'texte' , type: 'ckeditor', type_options: { required: True } }
-
-        

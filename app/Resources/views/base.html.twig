@@ -3,40 +3,42 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Comvisa{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
-    <body>        
-        {% block nav %}
-  <nav class="uk-navbar uk-navbar-container uk-margin navbartop">
-    <div class="uk-navbar-center">
-      <a href="#offcanvas-slide" class="uk-button uk-button-muted test2" uk-toggle><span uk-navbar-toggle-icon class="test2"></span></a>
-      <div id="offcanvas-slide" uk-offcanvas>
-        <div class="uk-offcanvas-bar">
-          <ul class="uk-nav uk-nav-default">
-            <li><a href="/">Home</a></li>
-            <li class="uk-nav-divider"></li>
-            {% for rubrique in rubriques %}
-                <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
-            {% endfor %}
-            <li class="uk-nav-divider"></li>
-            <li><a href="/annonce" title="Annonce">Annonce</a></li>
-          </ul>
-        </div>
-      </div>
-            
+    <body class="uk-background-muted">        
+{% block nav %}
+<div class="uk-position-relative">
+  {% block img %}
+  {% endblock %}
+    <div class=" uk-position-top uk-position-fixed navbar-base">
+        <nav class=" uk-navbar-transparent" style="zindex:0;" uk-navbar>
+            <div class="uk-navbar-left" style="zindex:0;" uk-navbar>
+                <a href="#offcanvas-slide" class="uk-button uk-button-muted test2" uk-toggle style="z-index:980;" ><span uk-navbar-toggle-icon  class="test2"></span></a>
+                <div id="offcanvas-slide" uk-offcanvas>
+                  <div class="uk-offcanvas-bar">
+                    <ul class="uk-nav uk-nav-default">
+                      <li><a href="/">Home</a></li>
+                      <li class="uk-nav-divider"></li>
+                      {% for rubrique in rubriques %}
+                          <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
+                      {% endfor %}
+                      <li class="uk-nav-divider"></li>
+                      <li><a href="/annonce" title="Annonce">Annonce</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </nav>
     </div>
-</nav>        
-            
-        {% endblock %}
-        <div class="uk-align-center">
-        {% block body %}{% endblock %}
-        </div>
-        <script type="text/javascript" src="{{ asset('node_modules/jquery/dist/jquery.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit-icons.js') }}"></script>
+</div>        
+{% endblock %}
+{% block body %}{% endblock %}
+<script type="text/javascript" src="{{ asset('node_modules/jquery/dist/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/uikit/dist/js/uikit-icons.js') }}"></script>
+{% block javascript %}{% endblock %}
     </body>
 </html>
 

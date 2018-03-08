@@ -4,9 +4,10 @@
 }
 
 .color1{
+	z-index: 1;
 	background-color: #FF8849;
 	width: auto;
-	height: 5em;
+	height: 4em;
 }
 
 .test2:hover{
