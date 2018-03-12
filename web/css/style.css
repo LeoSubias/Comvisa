@@ -1,6 +1,27 @@
-.ha{
-	background: white;
-	opacity: 0.6;
+.hey{
+	padding-top: -40em;
+}
+
+.lien-ann{
+	text-decoration: none;
+}
+
+.lien-ann:hover{
+	text-decoration: none;
+}
+
+#scale_img{
+	background: linear-gradient(rgba(255, 255, 255, 0.45),rgba(255, 255, 255, 0.45))
+	width:auto;
+	height:22em;
+}
+
+.texte-scale{
+	color: black !important;
+}
+
+.icone-scale{
+	color:black !important;
 }
 
 .color1{
@@ -43,8 +64,8 @@
 	height: 50em;
 }
 .img{
-	width: 55em;
-	height: 35em;
+	width: 54em;
+	height: 30em;
 }
 
 .try{
@@ -53,3 +74,4 @@
 .text-ann{
 	color:white;
 }
+

@@ -1,26 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block img %}
+
 	<div id="logo">
 		<img src="/uploads/Photo/{{ rubrique.photo }}">
-		
+		<div class="uk-overlay uk-overlay-primary uk-position-top-right uk-text-center">
+                <h3 class="uk-margin-remove">{{ rubrique.nom }}</h3>
+                <p>{{ rubrique.texte|raw }}</p>
+            </div>
+    	</div>
+	</div>	
 </div>
   {% endblock %}
 {% block body %}
-        <div class="uk-overlay uk-position-bottom-center ha">
-        	<td>{{ rubrique.nom }}</td><br>
-				{{ rubrique.texte|raw }}
-    	</div>
-	</div>	
+        
 {% endblock %}
-{# <div class="uk-section" uk-lightbox="animation: slide">
-	<a class="uk-inline" href="/uploads/Photo/{{ rubrique.photo }}" caption="{{ rubrique.nom }}">
-		<img class="img-rub" src="/uploads/Photo/{{ rubrique.photo }}">
-    </a>
-</div>
-<div class="uk-section ">
-	<td>{{ rubrique.nom }}</td><br>
-	{{ rubrique.texte|raw }}
-</div> #}
 
 

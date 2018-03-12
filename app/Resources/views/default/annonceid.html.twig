@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        <div class="uk-grid-collapse uk-child-width-1-2@m uk-flex-middle" uk-grid>
+            <div class="uk-background-cover">
+            	<img class="uk-background-cover" src="/uploads/Photo/{{ annonce.photo }}" uk-height-viewport>
+            </div>
+            <div class="uk-padding-large">
+                <h3 class="uk-card-title">{{ annonce.titre|raw }}</h3>
+						<div class="uk-card">
+							{{ annonce.texte|raw }}
+						</div>
+	    			<div class="uk-card">	
+	    				<span>Type Annonce : </span>{{ annonce.type_annonce|raw }}
+	    			</div>
+            </div>
+        </div>
+{% endblock %}

@@ -24,7 +24,7 @@ class MentionLegale
     /**
      * @var string
      *
-     * @ORM\Column(name="men_texte", type="string", length=1000)
+     * @ORM\Column(name="men_texte", type="string", length=10000)
      */
     private $texte;
 

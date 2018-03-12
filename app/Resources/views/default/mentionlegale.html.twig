@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	{% for mentionlegale in mentionlegales %}
+		<div class="uk-text-center uk-grid-match uk-child-width-1-1@s" uk-grid>
+			<div>{{ mentionlegale.texte|raw }}</div>
+		</div>
+	{% endfor %}
+{% endblock %}

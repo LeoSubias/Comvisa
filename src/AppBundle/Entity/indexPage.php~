@@ -1,0 +1,350 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+
+/**
+ * indexPage
+ *
+ * @ORM\Table(name="index_page")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\indexPageRepository")
+ */
+class indexPage
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titreInto", type="string", length=255)
+     */
+    private $titreInto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texteIntro", type="string", length=600)
+     */
+    private $texteIntro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titreCoWorker", type="string", length=255)
+     */
+    private $titreCoWorker;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texteCoWorker", type="string", length=600)
+     */
+    private $texteCoWorker;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titreAnnonce", type="string", length=255)
+     */
+    private $titreAnnonce;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texteAnnonce", type="string", length=600)
+     */
+    private $texteAnnonce;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titreCoWorking", type="string", length=255)
+     */
+    private $titreCoWorking;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texteCoWorking", type="string", length=600)
+     */
+    private $texteCoWorking;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ann_photo", type="string", length=255, nullable = true)
+     */
+    private $photo;
+
+    /**
+    * @Vich\UploadableField(mapping="photo", fileNameProperty="photo" )
+    * 
+    * @var File
+    */
+    private $photoFile;
+
+
+    public function __toString()
+    {
+        return $this->getTitreInto()." ".$this->getTexteIntro()." ".$this->getTitreCoWorker()." ".$this->getTexteCoWorker()." ".$this->getTitreAnnonce()." ".$this->getTexteAnnonce()." ".$this->getTitreCoWorking()." ".$this->getTexteCoWorking()." ".$this->getPhoto()." ".$this->getPhotoFile();
+    }
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titreInto.
+     *
+     * @param string $titreInto
+     *
+     * @return indexPage
+     */
+    public function setTitreInto($titreInto)
+    {
+        $this->titreInto = $titreInto;
+
+        return $this;
+    }
+
+    /**
+     * Get titreInto.
+     *
+     * @return string
+     */
+    public function getTitreInto()
+    {
+        return $this->titreInto;
+    }
+
+    /**
+     * Set texteIntro.
+     *
+     * @param string $texteIntro
+     *
+     * @return indexPage
+     */
+    public function setTexteIntro($texteIntro)
+    {
+        $this->texteIntro = $texteIntro;
+
+        return $this;
+    }
+
+    /**
+     * Get texteIntro.
+     *
+     * @return string
+     */
+    public function getTexteIntro()
+    {
+        return $this->texteIntro;
+    }
+
+    /**
+     * Set titreCoWorker.
+     *
+     * @param string $titreCoWorker
+     *
+     * @return indexPage
+     */
+    public function setTitreCoWorker($titreCoWorker)
+    {
+        $this->titreCoWorker = $titreCoWorker;
+
+        return $this;
+    }
+
+    /**
+     * Get titreCoWorker.
+     *
+     * @return string
+     */
+    public function getTitreCoWorker()
+    {
+        return $this->titreCoWorker;
+    }
+
+    /**
+     * Set texteCoWorker.
+     *
+     * @param string $texteCoWorker
+     *
+     * @return indexPage
+     */
+    public function setTexteCoWorker($texteCoWorker)
+    {
+        $this->texteCoWorker = $texteCoWorker;
+
+        return $this;
+    }
+
+    /**
+     * Get texteCoWorker.
+     *
+     * @return string
+     */
+    public function getTexteCoWorker()
+    {
+        return $this->texteCoWorker;
+    }
+
+    /**
+     * Set titreAnnonce.
+     *
+     * @param string $titreAnnonce
+     *
+     * @return indexPage
+     */
+    public function setTitreAnnonce($titreAnnonce)
+    {
+        $this->titreAnnonce = $titreAnnonce;
+
+        return $this;
+    }
+
+    /**
+     * Get titreAnnonce.
+     *
+     * @return string
+     */
+    public function getTitreAnnonce()
+    {
+        return $this->titreAnnonce;
+    }
+
+    /**
+     * Set texteAnnonce.
+     *
+     * @param string $texteAnnonce
+     *
+     * @return indexPage
+     */
+    public function setTexteAnnonce($texteAnnonce)
+    {
+        $this->texteAnnonce = $texteAnnonce;
+
+        return $this;
+    }
+
+    /**
+     * Get texteAnnonce.
+     *
+     * @return string
+     */
+    public function getTexteAnnonce()
+    {
+        return $this->texteAnnonce;
+    }
+
+    /**
+     * Set titreCoWorking.
+     *
+     * @param string $titreCoWorking
+     *
+     * @return indexPage
+     */
+    public function setTitreCoWorking($titreCoWorking)
+    {
+        $this->titreCoWorking = $titreCoWorking;
+
+        return $this;
+    }
+
+    /**
+     * Get titreCoWorking.
+     *
+     * @return string
+     */
+    public function getTitreCoWorking()
+    {
+        return $this->titreCoWorking;
+    }
+
+    /**
+     * Set texteCoWorking.
+     *
+     * @param string $texteCoWorking
+     *
+     * @return indexPage
+     */
+    public function setTexteCoWorking($texteCoWorking)
+    {
+        $this->texteCoWorking = $texteCoWorking;
+
+        return $this;
+    }
+
+    /**
+     * Get texteCoWorking.
+     *
+     * @return string
+     */
+    public function getTexteCoWorking()
+    {
+        return $this->texteCoWorking;
+    }
+
+    /**
+     * Set photo
+     *
+     * @param string $photo
+     *
+     * @return Annonce
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile 
+     *
+     * @return Photo
+    */
+    public function setPhotoFile(File $photo = null)
+    {
+        $this->photoFile = $photo;
+
+        if ($photo) 
+            $this->updatedAt = new \DateTimeImmutable();
+        
+        return $this;
+    }
+    /**
+     * @return File|null
+     */
+    public function getPhotoFile()
+    {
+        return $this->photoFile;
+    }
+}

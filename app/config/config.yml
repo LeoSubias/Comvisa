@@ -163,3 +163,36 @@ easy_admin:
                 title: "Mention Legale"
                 fields:
                     - { property: 'texte' , type: 'ckeditor', type_options: { required: True } }
+
+        IndexPage:
+            class: AppBundle\Entity\indexPage
+            form:
+                title: "Index Page"
+                fields:
+                    - titreIntro
+                    - { property: 'texteIntro' , type: 'ckeditor', type_options: { required: True } }
+                    - titreCoWorker
+                    - { property: 'texteCoWorker' , type: 'ckeditor', type_options: { required: True } }
+                    - titreAnnonce
+                    - { property: 'texteAnnonce' , type: 'ckeditor', type_options: { required: True } }
+                    - titreCoWorking
+                    - { property: 'texteCoWorking' , type: 'ckeditor', type_options: { required: True } }
+                    - { property: 'photoFile', type: 'vich_image' }
+            list:
+                fields:
+                    - titreIntro
+                    - titreCoWorker
+                    - titreAnnonce
+                    - titreCoWorking
+        Contact:
+            class: AppBundle\Entity\Contact
+            form:
+                title: "Contact"
+                fields:
+                     - { property: 'texteContact' , type: 'ckeditor', type_options: { required: True } }
+        MentionLegale:
+            class: AppBundle\Entity\MentionLegale
+            form:
+                title: "Mention_Legale"
+                fields:
+                    - { property: 'texte' , type: 'ckeditor', type_options: { required: True } }

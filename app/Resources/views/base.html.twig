@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
-    <body class="uk-background-muted">        
+    <body>        
 {% block nav %}
 <div class="uk-position-relative">
   {% block img %}
@@ -15,23 +15,34 @@
     <div class=" uk-position-top uk-position-fixed navbar-base">
         <nav class=" uk-navbar-transparent" style="zindex:0;" uk-navbar>
             <div class="uk-navbar-left" style="zindex:0;" uk-navbar>
-                <a href="#offcanvas-slide" class="uk-button uk-button-muted test2" uk-toggle style="z-index:980;" ><span uk-navbar-toggle-icon  class="test2"></span></a>
+                <a href="#offcanvas-slide" class="uk-button uk-button-muted test2" uk-toggle style="z-index:980;"><span uk-navbar-toggle-icon  class="test2"></span></a>
                 <div id="offcanvas-slide" uk-offcanvas>
                   <div class="uk-offcanvas-bar">
                     <ul class="uk-nav uk-nav-default">
                       <li><a href="/">Home</a></li>
                       <li class="uk-nav-divider"></li>
                       {% for rubrique in rubriques %}
-                          <li><a href="rubrique/{{ rubrique.id }}">{{ rubrique.nom }}</a></li>
+                          <li><a href="{{ path('rubrique', {'id': rubrique.id }) }}">{{ rubrique.nom }}</a></li>
                       {% endfor %}
                       <li class="uk-nav-divider"></li>
                       <li><a href="/annonce" title="Annonce">Annonce</a></li>
+                      <li class="uk-nav-divider"></li>
+                      <li><a href="/mentionlegale">Mention Legale</a></li>
+                      <li class="uk-nav-divider"></li>
+                      <li><a href="/contact">Contact</a></li>
+                      <li class="uk-nav-divider try-test"></li>
                     </ul>
+                    <ul class="uk-iconnav">
+                      <li><a href="#" uk-icon="icon: facebook"></a></li>
+                      <li><a href="#" uk-icon="icon: instagram"></a></li>
+                      <li><a href="#" uk-icon="icon: linkedin"></a></li>
+                  </ul>
                   </div>
                 </div>
             </div>
         </nav>
     </div>
+    
 </div>        
 {% endblock %}
 {% block body %}{% endblock %}
