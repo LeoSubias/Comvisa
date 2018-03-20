@@ -12,8 +12,10 @@ use AppBundle\Entity\Rubrique;
 use AppBundle\Entity\Annonce;
 use AppBundle\Entity\indexPage;
 use AppBundle\Entity\Contact;
+use AppBundle\Entity\coworkerPhoto;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Map;
+
 
 class DefaultController extends Controller
 {
@@ -28,6 +30,7 @@ class DefaultController extends Controller
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
         $indexPages = $em->getRepository('AppBundle:indexPage')->findAll();
+        $coworkerPhotos = $em->getRepository('AppBundle:coworkerPhoto')->findAll();
         
         return $this->render('default/index.html.twig', array(
                 'annonces' => $annonces,
@@ -35,6 +38,7 @@ class DefaultController extends Controller
                 'mentionlegales' => $mentionlegales,
                 'rubriques' => $rubriques,  
                 'indexPages' => $indexPages,
+                'coworkerPhotos' => $coworkerPhotos,
             ));
     }
 
@@ -52,14 +56,16 @@ class DefaultController extends Controller
             ->getRepository(Rubrique::class)->find($id);
         $rubriques = $this->getDoctrine()->getRepository(Rubrique::class)->findAll();
 
+        if(empty($rubrique))
+        {
+            return $this->redirectToRoute('homepage');
+        } else {
 
         return $this->render('default/rubrique.html.twig', array(
             'rubrique' => $rubrique,
-            'rubriques' => $rubriques,
-            
-            
+            'rubriques' => $rubriques,  
         ));
-        
+        }
     }
 
     /**
@@ -79,6 +85,11 @@ class DefaultController extends Controller
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
         
+        if(empty($annonce))
+        {
+            return $this->redirectToRoute('homepage');
+        } else {
+
         return $this->render('default/annonceid.html.twig', array(
                 'annonce' => $annonce,
                 'annonces' => $annonces,
@@ -86,6 +97,7 @@ class DefaultController extends Controller
                 'mentionlegales' => $mentionlegales,
                 'rubriques' => $rubriques,
         ));
+        }
         
     }
 

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Comvisa{% endblock %}</title>
+        {% block css %}<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
@@ -12,17 +13,17 @@
 <div class="uk-position-relative">
   {% block img %}
   {% endblock %}
-    <div class=" uk-position-top uk-position-fixed navbar-base">
+    <div class="size-test uk-position-top uk-position-fixed navbar-base">
         <nav class=" uk-navbar-transparent" style="zindex:0;" uk-navbar>
             <div class="uk-navbar-left" style="zindex:0;" uk-navbar>
-                <a href="#offcanvas-slide" class="uk-button uk-button-muted test2" uk-toggle style="z-index:980;"><span uk-navbar-toggle-icon  class="test2"></span></a>
+                <a href="#offcanvas-slide" class="uk-button uk-button-muted icon-hover" uk-toggle style="z-index:980;"><span uk-navbar-toggle-icon  class="icon-hover"></span></a><p>Menu</p>
                 <div id="offcanvas-slide" uk-offcanvas>
                   <div class="uk-offcanvas-bar">
-                    <ul class="uk-nav uk-nav-default">
+                    <ul class="size-test uk-nav uk-nav-default">
                       <li><a href="/">Home</a></li>
                       <li class="uk-nav-divider"></li>
                       {% for rubrique in rubriques %}
-                          <li><a href="{{ path('rubrique', {'id': rubrique.id }) }}">{{ rubrique.nom }}</a></li>
+                          <li><a href="{{ path('rubrique_show', {'id': rubrique.id }) }}">{{ rubrique.nom }}</a></li>
                       {% endfor %}
                       <li class="uk-nav-divider"></li>
                       <li><a href="/annonce" title="Annonce">Annonce</a></li>
@@ -30,7 +31,7 @@
                       <li><a href="/mentionlegale">Mention Legale</a></li>
                       <li class="uk-nav-divider"></li>
                       <li><a href="/contact">Contact</a></li>
-                      <li class="uk-nav-divider try-test"></li>
+                      <li class="uk-nav-divider"></li>
                     </ul>
                     <ul class="uk-iconnav">
                       <li><a href="#" uk-icon="icon: facebook"></a></li>

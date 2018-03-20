@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block img %}
-
-	<div id="logo">
-		<img src="/uploads/Photo/{{ rubrique.photo }}">
-		<div class="uk-overlay uk-overlay-primary uk-position-top-right uk-text-center">
-                <h3 class="uk-margin-remove">{{ rubrique.nom }}</h3>
-                <p>{{ rubrique.texte|raw }}</p>
+<div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
+            <div class="im-test">
+            	<img class="image-rubrique" src="/uploads/Photo/{{ rubrique.photo }}">
             </div>
-    	</div>
-	</div>	
-</div>
+            <div class="uk-padding-large">
+                <h3 class="uk-card-title">{{ rubrique.nom|raw }}</h3>
+	    			<div class="uk-card">	
+	    				<span>{{ rubrique.texte|raw }}</span>
+	    			</div>
+            </div>
+        </div>
+
   {% endblock %}
 {% block body %}
         

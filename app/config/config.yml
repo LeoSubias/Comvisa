@@ -169,15 +169,14 @@ easy_admin:
             form:
                 title: "Index Page"
                 fields:
-                    - titreIntro
+                    - { property: 'titreIntro' , type: 'ckeditor', type_options: { required: True } }
                     - { property: 'texteIntro' , type: 'ckeditor', type_options: { required: True } }
-                    - titreCoWorker
+                    - { property: 'titreCoWorker' , type: 'ckeditor', type_options: { required: True } }
                     - { property: 'texteCoWorker' , type: 'ckeditor', type_options: { required: True } }
-                    - titreAnnonce
+                    - { property: 'titreAnnonce' , type: 'ckeditor', type_options: { required: True } }
                     - { property: 'texteAnnonce' , type: 'ckeditor', type_options: { required: True } }
-                    - titreCoWorking
+                    - { property: 'titreCoWorking' , type: 'ckeditor', type_options: { required: True } }
                     - { property: 'texteCoWorking' , type: 'ckeditor', type_options: { required: True } }
-                    - { property: 'photoFile', type: 'vich_image' }
             list:
                 fields:
                     - titreIntro
@@ -196,3 +195,10 @@ easy_admin:
                 title: "Mention_Legale"
                 fields:
                     - { property: 'texte' , type: 'ckeditor', type_options: { required: True } }
+        coworkerPhoto:
+            class: AppBundle\Entity\coworkerPhoto
+            form:
+                title: "CoworkerPhoto"
+                fields:
+                    - { property: 'photoFile', type: 'vich_image' }
+                    - nom

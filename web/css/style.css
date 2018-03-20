@@ -1,5 +1,5 @@
-.hey{
-	padding-top: -40em;
+body{
+	font-family: 'Source Code Pro', monospace;
 }
 
 .lien-ann{
@@ -11,27 +11,23 @@
 }
 
 #scale_img{
-	background: linear-gradient(rgba(255, 255, 255, 0.45),rgba(255, 255, 255, 0.45))
 	width:auto;
 	height:22em;
 }
 
-.texte-scale{
-	color: black !important;
-}
-
-.icone-scale{
-	color:black !important;
+#scale_img_rub{
+	width:60em;
+	height:30em;
 }
 
 .color1{
 	z-index: 1;
-	background-color: #FF8849;
+	/*background-color: black;*/
 	width: auto;
-	height: 4em;
+	height: 3em;
 }
 
-.test2:hover{
+.icon-hover:hover{
 	color:#FF8849;
 }
 
@@ -49,29 +45,62 @@
 /*[class*="uk-"]{
 	border:2px solid black;
 }*/
-.test{
-	background-image: url("image/place-comedie-montpellier.jpg")
-}
-.test3{
-	float: left;
-	overflow: auto;
-}
-
-.img-rub{
-	margin-top: -5em;
-	padding-left: 2.5em;
-	width: 98%;
-	height: 50em;
-}
 .img{
 	width: 54em;
 	height: 30em;
 }
 
-.try{
+.ann-div{
 	margin-left: 0em;
 }
-.text-ann{
-	color:white;
+
+.img-test{
+	border:2px solid black;
+	border-radius: 0px 10px 0px 10px;
 }
 
+.color2{
+	color:black !important;
+}
+
+
+
+.img-ann-index{
+	margin-right: 20em;
+	margin-left: 10em;
+	height: 35em;
+	width: 50em;
+}
+
+.titre-ann{
+	margin-top: 20px;
+	margin-left: 10em ;
+}
+
+.image-annonce{
+	padding: 15px;
+	padding-top: 5em;
+	height: 55em;
+	width: auto;
+	}
+
+.image-rubrique{
+	padding: 15px;
+	padding-top: 5em;
+	height: 58em;
+	width: 115em;
+	}
+
+
+.size-test{
+font-size: 22px;
+}
+
+.marg-btn{
+	margin-left: 8em;
+}
+
+
+.texte-ann{
+	margin: 15px 95px 25px 95px;
+}

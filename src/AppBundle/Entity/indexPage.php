@@ -3,15 +3,12 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * indexPage
  *
  * @ORM\Table(name="ind_index_page")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\indexPageRepository")
- *@Vich\Uploadable
  */
 class indexPage
 {
@@ -34,21 +31,21 @@ class indexPage
     /**
      * @var string
      *
-     * @ORM\Column(name="ind_texteIntro", type="string", length=600)
+     * @ORM\Column(name="ind_texteIntro", type="string", length=3000)
      */
     private $texteIntro;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ind_titreCoWorker", type="string", length=600)
+     * @ORM\Column(name="ind_titreCoWorker", type="string", length=3000)
      */
     private $titreCoWorker;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ind_texteCoWorker", type="string", length=600)
+     * @ORM\Column(name="ind_texteCoWorker", type="string", length=3000)
      */
     private $texteCoWorker;
 
@@ -62,7 +59,7 @@ class indexPage
     /**
      * @var string
      *
-     * @ORM\Column(name="ind_texteAnnonce", type="string", length=600)
+     * @ORM\Column(name="ind_texteAnnonce", type="string", length=3000)
      */
     private $texteAnnonce;
 
@@ -76,28 +73,13 @@ class indexPage
     /**
      * @var string
      *
-     * @ORM\Column(name="ind_texteCoWorking", type="string", length=600)
+     * @ORM\Column(name="ind_texteCoWorking", type="string", length=3000)
      */
     private $texteCoWorking;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ind_photo", type="string", length=255, nullable = true)
-     */
-    private $photo;
-
-    /**
-    * @Vich\UploadableField(mapping="photo", fileNameProperty="photo" )
-    * 
-    * @var File
-    */
-    private $photoFile;
-
-
     public function __toString()
     {
-        return $this->getTitreIntro()." ".$this->getTexteIntro()." ".$this->getTitreCoWorker()." ".$this->getTexteCoWorker()." ".$this->getTitreAnnonce()." ".$this->getTexteAnnonce()." ".$this->getTitreCoWorking()." ".$this->getTexteCoWorking()." ".$this->getPhoto()." ".$this->getPhotoFile();
+        return $this->getTitreIntro()." ".$this->getTexteIntro()." ".$this->getTitreCoWorker()." ".$this->getTexteCoWorker()." ".$this->getTitreAnnonce()." ".$this->getTexteAnnonce()." ".$this->getTitreCoWorking()." ".$this->getTexteCoWorking();
     }
 
 
@@ -301,51 +283,5 @@ class indexPage
     public function getTexteCoWorking()
     {
         return $this->texteCoWorking;
-    }
-
-    /**
-     * Set photo
-     *
-     * @param string $photo
-     *
-     * @return Annonce
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return string
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
-
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile 
-     *
-     * @return Photo
-    */
-    public function setPhotoFile(File $photo = null)
-    {
-        $this->photoFile = $photo;
-
-        if ($photo) 
-            $this->updatedAt = new \DateTimeImmutable();
-        
-        return $this;
-    }
-    /**
-     * @return File|null
-     */
-    public function getPhotoFile()
-    {
-        return $this->photoFile;
     }
 }

@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+	<div class="marg">
+		
 	{% for contact in contacts %}
 		<div class="uk-text-center uk-grid-match uk-child-width-1-1@s" uk-grid>
 			<div>{{ contact.texteContact|raw }}</div>
 		</div>
 	{% endfor %}
+	</div>
 {% endblock %}
