@@ -31,6 +31,7 @@ class DefaultController extends Controller
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
         $indexPages = $em->getRepository('AppBundle:indexPage')->findAll();
         $coworkerPhotos = $em->getRepository('AppBundle:coworkerPhoto')->findAll();
+        $siteInfos = $em->getRepository('AppBundle:siteInfo')->findAll();
         
         return $this->render('default/index.html.twig', array(
                 'annonces' => $annonces,
@@ -39,6 +40,7 @@ class DefaultController extends Controller
                 'rubriques' => $rubriques,  
                 'indexPages' => $indexPages,
                 'coworkerPhotos' => $coworkerPhotos,
+                'siteInfos' => $siteInfos,
             ));
     }
 

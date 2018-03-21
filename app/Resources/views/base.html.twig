@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Comvisa{% endblock %}</title>
         {% block css %}<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('image/comvisa-logo.svg') }}" />
         <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
@@ -20,7 +20,7 @@
                 <div id="offcanvas-slide" uk-offcanvas>
                   <div class="uk-offcanvas-bar">
                     <ul class="size-test uk-nav uk-nav-default">
-                      <li><a href="/">Home</a></li>
+                      <li><a href="/"> <img class="logo-comvisa" src="{{ asset('image/comvisa-logo.svg') }}"></a></li>
                       <li class="uk-nav-divider"></li>
                       {% for rubrique in rubriques %}
                           <li><a href="{{ path('rubrique_show', {'id': rubrique.id }) }}">{{ rubrique.nom }}</a></li>
@@ -34,9 +34,28 @@
                       <li class="uk-nav-divider"></li>
                     </ul>
                     <ul class="uk-iconnav">
-                      <li><a href="#" uk-icon="icon: facebook"></a></li>
-                      <li><a href="#" uk-icon="icon: instagram"></a></li>
-                      <li><a href="#" uk-icon="icon: linkedin"></a></li>
+                      {% for siteInfo in siteInfos %}
+                        {% if siteInfo.facebook == true %}
+                          <li><a href="#" uk-icon="icon: facebook"></a></li>
+                          {% else %}
+                        {% endif %}
+                        {% if siteInfo.instagram == true %}
+                          <li><a href="#" uk-icon="icon: instagram"></a></li>
+                          {% else %}
+                        {% endif %}
+                        {% if siteInfo.linkedin == true %}
+                          <li><a href="#" uk-icon="icon: linkedin"></a></li>
+                          {% else %}
+                        {% endif %}
+                          {% if siteInfo.twitter == true %}
+                          <li><a href="#" uk-icon="icon: twitter"></a></li>
+                          {% else %}
+                        {% endif %}
+                          {% if siteInfo.google == true %}
+                          <li><a href="#" uk-icon="icon: google"></a></li>
+                          {% else %}
+                        {% endif %}
+                      {% endfor %}
                   </ul>
                   </div>
                 </div>

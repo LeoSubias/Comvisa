@@ -3,7 +3,7 @@
 <div class="uk-position-relative">        
     {% for indexPage in indexPages %}
     <div class="uk-align-center uk-section" >
-        <img class="uk-align-center" src="{{ asset('image/place-comedie-montpellier.jpg') }}">
+        <img class="uk-align-center" src="{{ asset('image/montpellier.jpg') }}">
             
             <h3 class="uk-text-center">{{ indexPage.titreIntro|raw }}</h3>
             <div class="uk-text-center uk-grid-match uk-child-width-1-1@s" uk-grid>
@@ -124,8 +124,26 @@
     
     {% endblock %}
 </ul>
+
+<div class="titre-ann">
+    <a href="/annonce" title="Annonce">Toutes les Anonces -></a>
+</div>
     </section> 
         <div class="uk-section-small"></div>
+
+<div class="uk-section-large">
+    <p class="uk-margin">Les partenaires : </p>
+ <div class="uk-card uk-card-body">
+     <a href="https://www.grandhoteldumidimontpellier.com/" target="_blank"><img  class="img-logo" src="{{ asset('image/logo.png') }}"></a>
+     <a href="https://www.accorhotels.com/fr/hotel-3043-hotel-mercure-montpellier-centre-comedie/index.shtml" target="_blank"><img  class="img-logo" src="{{ asset('image/mercure-center.jpg') }}"></a>
+     <a href="http://www.radio-aviva.com/" target="_blank"><img  class="img-logo" src="{{ asset('image/logoAVIVA.png') }}"></a>
+     <a href="http://www.cinediagonal.com/" target="_blank"><img  class="img-logo" src="{{ asset('image/Diapositive1.jpg') }}"></a>
+     <a href="http://www.gm-consulting.fr/" target="_blank"><img  class="img-logo" src="{{ asset('image/GM-CONSULTING-LOGO.jpg') }}"></a>
+    <img  class="img-logo" src="{{ asset('image/Partenaire-Alife.jpg') }}">
+     <a href="http://thilie-creations.blogspot.fr/" target="_blank"><img  class="img-logo" src="{{ asset('image/thilie-creations.jpg') }}"></a>
+ </div>
+
+</div>
 
 {% endfor %}
 {% endblock %}

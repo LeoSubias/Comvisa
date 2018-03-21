@@ -144,7 +144,6 @@ easy_admin:
                     - { property: 'photoFile', type: 'vich_image' }
                     - { property: 'texte' , type: 'ckeditor' }
                     - type_annonce
-                    - user
             list:
                 fields:
                     - titre
@@ -202,3 +201,13 @@ easy_admin:
                 fields:
                     - { property: 'photoFile', type: 'vich_image' }
                     - nom
+        siteInfo:
+            class: AppBundle\Entity\siteInfo
+            form:
+                title: "SiteInfo"
+                fields:
+                    - { property: 'facebook', type_options: { required: False } } 
+                    - { property: 'instagram', type_options: { required: False } } 
+                    - { property: 'twitter', type_options: { required: False } } 
+                    - { property: 'linkedin', type_options: { required: False } } 
+                    - { property: 'google', type_options: { required: False } } 
