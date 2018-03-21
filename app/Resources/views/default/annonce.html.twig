@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <div class="uk-child-width-auto" uk-grid>
+    <div class="uk-child-width-1-2@s" uk-grid>
 {% for annonce in annonces %}
-        <div class="uk-section uk-margin-left uk-card annd-div">
+        <div class="uk-section  uk-card annd-div">
             <div class="uk-card-media-top uk-card-default">
             	<div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
 	                {% if annonce.photo != null %}
@@ -16,7 +16,7 @@
             			</div>
             			{% if annonce.texte|length > 255 %}
             				<div class="uk-card">
-            					<p>{{ annonce.texte[:110]|raw }} ... </p>
+            					<p>{{ annonce.texte[:200]|raw }} ... </p>
             				</div>
         				{% else %}
         					<div class="uk-margin-remove">

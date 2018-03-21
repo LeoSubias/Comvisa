@@ -57,6 +57,7 @@ class DefaultController extends Controller
         $rubrique = $this->getDoctrine()
             ->getRepository(Rubrique::class)->find($id);
         $rubriques = $this->getDoctrine()->getRepository(Rubrique::class)->findAll();
+        $siteInfos = $em->getRepository('AppBundle:siteInfo')->findAll();
 
         if(empty($rubrique))
         {
@@ -65,7 +66,8 @@ class DefaultController extends Controller
 
         return $this->render('default/rubrique.html.twig', array(
             'rubrique' => $rubrique,
-            'rubriques' => $rubriques,  
+            'rubriques' => $rubriques,
+            'siteInfos' => $siteInfos,  
         ));
         }
     }
@@ -86,6 +88,7 @@ class DefaultController extends Controller
         $type_Annonces = $em->getRepository('AppBundle:Type_Annonce')->findAll();
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
+        $siteInfos = $em->getRepository('AppBundle:siteInfo')->findAll();
         
         if(empty($annonce))
         {
@@ -98,6 +101,7 @@ class DefaultController extends Controller
                 'type_Annonces' => $type_Annonces,
                 'mentionlegales' => $mentionlegales,
                 'rubriques' => $rubriques,
+                'siteInfos' => $siteInfos,
         ));
         }
         
@@ -118,12 +122,14 @@ class DefaultController extends Controller
         $type_Annonces = $em->getRepository('AppBundle:Type_Annonce')->findAll();
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
+        $siteInfos = $em->getRepository('AppBundle:siteInfo')->findAll();
         
         return $this->render('default/annonce.html.twig', array(
                 'annonces' => $annonces,
                 'type_Annonces' => $type_Annonces,
                 'mentionlegales' => $mentionlegales,
                 'rubriques' => $rubriques,
+                'siteInfos' => $siteInfos,
         ));
     }
 
@@ -140,11 +146,13 @@ class DefaultController extends Controller
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
         $contacts = $em->getRepository('AppBundle:Contact')->findAll();
+        $siteInfos = $em->getRepository('AppBundle:siteInfo')->findAll();
         
         return $this->render('default/contact.html.twig', array(
                 'mentionlegales' => $mentionlegales,
                 'rubriques' => $rubriques,
                 'contacts' => $contacts,
+                'siteInfos' => $siteInfos,
         ));
     }
 
@@ -161,11 +169,13 @@ class DefaultController extends Controller
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
         $rubriques = $em->getRepository('AppBundle:Rubrique')->findAll();
         $mentionlegales = $em->getRepository('AppBundle:MentionLegale')->findAll();
+        $siteInfos = $em->getRepository('AppBundle:siteInfo')->findAll();
         
         return $this->render('default/mentionlegale.html.twig', array(
                 'mentionlegales' => $mentionlegales,
                 'rubriques' => $rubriques,
-                'mentionlegales' => $mentionlegales
+                'mentionlegales' => $mentionlegales,
+                'siteInfos' => $siteInfos,
         ));
     }
 }
