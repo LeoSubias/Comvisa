@@ -36,23 +36,23 @@
                     <ul class="uk-iconnav">
                       {% for siteInfo in siteInfos %}
                         {% if siteInfo.facebook == true %}
-                          <li><a href="#" uk-icon="icon: facebook"></a></li>
+                          <li><a href="{{ siteInfo.facebook }}" uk-icon="icon: facebook"></a></li>
                           {% else %}
                         {% endif %}
                         {% if siteInfo.instagram == true %}
-                          <li><a href="#" uk-icon="icon: instagram"></a></li>
+                          <li><a href="{{ siteInfo.instagram }}" uk-icon="icon: instagram"></a></li>
                           {% else %}
                         {% endif %}
                         {% if siteInfo.linkedin == true %}
-                          <li><a href="#" uk-icon="icon: linkedin"></a></li>
+                          <li><a href="{{ siteInfo.linkedin }}" uk-icon="icon: linkedin"></a></li>
                           {% else %}
                         {% endif %}
                           {% if siteInfo.twitter == true %}
-                          <li><a href="#" uk-icon="icon: twitter"></a></li>
+                          <li><a href="{{ siteInfo.twitter }}" uk-icon="icon: twitter"></a></li>
                           {% else %}
                         {% endif %}
                           {% if siteInfo.google == true %}
-                          <li><a href="#" uk-icon="icon: google"></a></li>
+                          <li><a href="{{ siteInfo.google }}" uk-icon="icon: google"></a></li>
                           {% else %}
                         {% endif %}
                       {% endfor %}
