@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Comvisa{% endblock %}</title>
         {% block css %}<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('image/comvisa-logo.svg') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('image/ComVisa-Logo-normal.png') }}" />
         <link rel="stylesheet" href="{{ asset('node_modules/uikit/dist/css/uikit.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
@@ -16,11 +16,11 @@
     <div class="size-test uk-position-top uk-position-fixed navbar-base">
         <nav class=" uk-navbar-transparent" style="zindex:0;" uk-navbar>
             <div class="uk-navbar-left" style="zindex:0;" uk-navbar>
-                <a href="#offcanvas-slide" class="uk-button uk-button-muted icon-hover" uk-toggle style="z-index:980;"><span uk-navbar-toggle-icon  class="icon-hover"></span></a><p>Menu</p>
+                <a href="#offcanvas-slide" class="uk-button uk-button-muted icon-hover" uk-toggle style="z-index:980;"><span uk-navbar-toggle-icon  class="icon-hover"></span></a><img class="img-menu" src="{{ asset('image/comvisa-logo-noir.png') }}">
                 <div id="offcanvas-slide" uk-offcanvas>
                   <div class="uk-offcanvas-bar">
                     <ul class="size-test uk-nav uk-nav-default">
-                      <li><a href="/"> <img class="logo-comvisa" src="{{ asset('image/comvisa-logo.svg') }}"></a></li>
+                      <li><a href="/"> <img class="logo-comvisa" src="{{ asset('image/ComVisa-Logo-normal.png') }}"></a></li>
                       <li class="uk-nav-divider"></li>
                       {% for rubrique in rubriques %}
                           <li><a href="{{ path('rubrique_show', {'id': rubrique.id }) }}">{{ rubrique.nom }}</a></li>
